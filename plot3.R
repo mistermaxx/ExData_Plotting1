@@ -30,15 +30,15 @@ plot3 <- function()
   energy.plot.data <- select(energy.subset.data, DateTimeStamp, Global_active_power, Global_reactive_power, Voltage, Global_intensity, Sub_metering_1, Sub_metering_2, Sub_metering_3)
   
   # sub meter 1
-  plot(energy.plot.data$DateTimeStamp, energy.plot.data$Sub_metering_1, col = "orange", type="l", xlab="", ylab="Energy Sub Metering")
+  plot(energy.plot.data$DateTimeStamp, energy.plot.data$Sub_metering_1, col = "orange", type = "l", xlab = "", ylab = "Energy Sub Metering")
   
   # sub meter 2
-  lines(energy.plot.data$DateTimeStamp, energy.plot.data$Sub_metering_2, col="green")
+  lines(energy.plot.data$DateTimeStamp, energy.plot.data$Sub_metering_2, col= "green")
   
   # sub meter 3
-  lines(energy.plot.data$DateTimeStamp, energy.plot.data$Sub_metering_3,col="purple")
+  lines(energy.plot.data$DateTimeStamp, energy.plot.data$Sub_metering_3, col = "purple")
   
-  legend("topright", col=c("orange","green","purple"), c("Sub_metering_1  ","Sub_metering_2  ", "Sub_metering_3  "),lty=c(1,1), lwd=c(1,1))
+  legend("topright", col=c("orange","green","purple"), c("Sub Metering 1   ","Sub Metering 2   ", "Sub Metering 3   "), lty=c(1,1), lwd=c(1,1))
   dev.copy(png, file="plot3.png", width=480, height=480)
   dev.off()
   
